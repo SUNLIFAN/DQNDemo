@@ -17,6 +17,7 @@ class Runner:
         self.anneal_epsilon = float((self.epsilon - self.min_epsilon) / self.args.epsilon_anneal_time)
 
         self.env = env
+        # self.env = gym.wrappers.Monitor(self.env, "recording")
         self.episode_limit = args.episode_len
         self.agent = self._init_agent()
         self.buffer = Buffer(args)
