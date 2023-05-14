@@ -63,7 +63,8 @@ class DQN:
             q_next_all = self.target_q_network(next_states)
             q_next = torch.max(q_next_all, dim=1, keepdim=True)[0]
             # TODO: 补全target_q的计算相关代码实现
-            target_q =
+            target_q = (rewards.unsqueeze(1) + self.args.gamma * q_next * done_multiplier).detach()
+            # print("================target_q: " + str(target_q.shape))
 
         q_eval_all = self.q_network(states)
         actions = actions.unsqueeze(dim=1)

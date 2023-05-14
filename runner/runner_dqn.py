@@ -55,6 +55,7 @@ class Runner:
             with torch.no_grad():
                 action = self.agent.select_action(state, self.epsilon)
             next_state, reward, done, info = self.env.step(action)
+            # print("next_state: " + str(next_state.shape))
 
             # Introduce extra bonus rewards.
             # position, velocity = next_state

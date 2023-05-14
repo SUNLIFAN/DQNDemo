@@ -5,6 +5,7 @@ class Buffer:
     def __init__(self, args):
         self.size = args.buffer_size
         self.args = args
+        # print("==========================state_shape: " + str(args.state_shape))
         # memory management
         self.current_size = 0
         # create the buffer to store info
@@ -21,6 +22,9 @@ class Buffer:
         self.buffer['state'][idxs] = state
         self.buffer['action'][idxs] = action
         self.buffer['reward'][idxs] = reward
+        # print("====================idx: " + str(idxs))
+        # print("==========buffer next_state: " + str(self.buffer['next_state'][0].shape))
+        # print("==========next_state: " + str(next_state.shape))
         self.buffer['next_state'][idxs] = next_state
         self.buffer['done'][idxs] = done
 
