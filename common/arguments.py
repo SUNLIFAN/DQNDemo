@@ -38,8 +38,8 @@ def get_args():
     parser.add_argument("--evaluate_episode_len", type=int, default=200, help="length of episodes for evaluating")
     parser.add_argument("--evaluate_rate", type=int, default=2000, help="how often to evaluate network (step)")
 
-    parser.add_argument("--evaluate", type=bool, default=False, help="whether to evaluate the network")
-    parser.add_argument("-load_model", type=bool, default=False, help="must keep track with the evaluate option")
+    parser.add_argument("--evaluate", type=bool, default=True, help="whether to evaluate the network")
+    parser.add_argument("-load_model", type=bool, default=True, help="must keep track with the evaluate option")
 
     parser.add_argument("--cuda", type=bool, default=False)
     parser.add_argument("--device", type=str, default='0', help="which GPU is used")
