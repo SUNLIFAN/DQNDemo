@@ -10,7 +10,7 @@ def get_args():
 
     parser.add_argument("--seed", type=int, default=678, help="random seed")
     parser.add_argument("--order", type=int, default=1, help="record the result under different parametric settings")
-    parser.add_argument("--hidden_dim", type=int, default=64, help="hidden dimension of all actor and critic networks")
+    parser.add_argument("--hidden_dim", type=int, default=32, help="hidden dimension of all actor and critic networks")
 
     parser.add_argument("--algorithm", type=str, default="DQN")
     parser.add_argument("--env_name", type=str, default="MountainCar-v0", choices=["MountainCar-v0", "CartPole-v1"])
@@ -29,7 +29,7 @@ def get_args():
 
     parser.add_argument("--save_dir", type=str, default="./log", help="directory in which experimental results are saved")
     parser.add_argument("--model_save_dir", type=str, default="./model_log", help="directory in which models are saved")
-    parser.add_argument("--save_rate", type=int, default=500000, help="model_save_interval (episode)")
+    parser.add_argument("--save_rate", type=int, default=100000, help="model_save_interval (episode)")
 
     parser.add_argument("--log", type=bool, default=True, help="whether record the change of loss in the training process")
     parser.add_argument("--log_interval", type=int, default=2000, help="log interval for each logged data (episode)")
@@ -38,8 +38,8 @@ def get_args():
     parser.add_argument("--evaluate_episode_len", type=int, default=200, help="length of episodes for evaluating")
     parser.add_argument("--evaluate_rate", type=int, default=2000, help="how often to evaluate network (step)")
 
-    parser.add_argument("--evaluate", type=bool, default=True, help="whether to evaluate the network")
-    parser.add_argument("-load_model", type=bool, default=True, help="must keep track with the evaluate option")
+    parser.add_argument("--evaluate", type=bool, default=False, help="whether to evaluate the network")
+    parser.add_argument("-load_model", type=bool, default=False, help="must keep track with the evaluate option")
 
     parser.add_argument("--cuda", type=bool, default=False)
     parser.add_argument("--device", type=str, default='0', help="which GPU is used")

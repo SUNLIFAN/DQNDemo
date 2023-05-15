@@ -101,7 +101,7 @@ class Runner:
                 with torch.no_grad():
                     action = self.agent.select_action(state, epsilon=0)
                 next_state, reward, done, info = self.env.step(action)
-                self.env.render()
+                # self.env.render()
                 episode_rewards += reward
                 state = next_state
                 time_step += 1
